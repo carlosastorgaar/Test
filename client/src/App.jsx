@@ -1,5 +1,6 @@
 import NavScrollExample from './components/NavBar';
 import { useState } from 'react';
+import Axios from 'axios';
 
 function App() {
 
@@ -7,8 +8,14 @@ function App() {
   const [apellido, setApellido] = useState("");
   const [edad, setEdad] = useState(0);
 
-  const mostrarDatos = () => {
-    alert(nombre)
+  const add = () => {
+    Axios.post("http://localhost:3001/create", {
+      nombre:nombre,
+      apellido:apellido,
+      edad:edad
+    }).then (()=> {
+      alert("Usuario registrado");
+    });
   }
 
   return (
@@ -28,7 +35,7 @@ function App() {
         <label>Edad: <input onChange={(event) => {
           setEdad(event.target.value);
         }} type='number'></input></label>
-        <button onClick={mostrarDatos}>Registrar</button>
+        <button onClick={add}>Registrar</button>
       </div>
       </div>
   )
