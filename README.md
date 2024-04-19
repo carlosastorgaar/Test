@@ -5,5 +5,3 @@ Cuenta con cuatro tipos de usuarios: Respondiente, Administrador, Creador y Root
 Tecnologias usadas:
 
 Cliente: HTML5, CSS3, SASS, Bootstrap, JavaScrpt y React.
-
-Servidor: Nodejs, MySQL y Express.
